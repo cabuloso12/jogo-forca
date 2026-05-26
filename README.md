@@ -68,6 +68,6 @@ O dicionário de palavras do jogo está configurado com as seguintes categorias:
 
 ---
 
-## 🧑‍💻 Autor
+## 🧑‍💻 Autor Davi R.
 
 Desenvolvido por [Seu Nome](https://github.com).
