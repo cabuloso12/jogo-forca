@@ -1,6 +1,5 @@
 import random
 
-# 1. Palavras separadas por temas usando dicionário
 temas = {
     "jogos": ["minecraft", "fortnite", "tetris", "valorant", "roblox"],
     "tecnologia": ["python", "algoritmo", "internet", "computador", "software"],
@@ -8,7 +7,6 @@ temas = {
     "filmes": ["avatar", "titanic", "shrek", "vingadores", "matrix"]
 }
 
-# Desenhos da forca baseados nas vidas
 FORCA_ART = [
     """
        +---+
@@ -20,7 +18,7 @@ FORCA_ART = [
 
            |
     =========
-    """,  # 0 vidas
+    """,
     """
        +---+
        |   |
@@ -30,7 +28,7 @@ FORCA_ART = [
 
            |
     =========
-    """,  # 1 vida
+    """,
     """
        +---+
        |   |
@@ -40,7 +38,7 @@ FORCA_ART = [
            |
            |
     =========
-    """,  # 2 vidas
+    """,
     """
        +---+
 
@@ -51,7 +49,7 @@ FORCA_ART = [
            |
            |
     =========
-    """,  # 3 vidas
+    """,
     """
        +---+
 
@@ -63,7 +61,7 @@ FORCA_ART = [
 
            |
     =========
-    """,  # 4 vidas
+    """,
     """
        +---+
        |   |
@@ -73,7 +71,7 @@ FORCA_ART = [
            |
            |
     =========
-    """,  # 5 vidas
+    """,
     """
        +---+
 
@@ -84,7 +82,7 @@ FORCA_ART = [
            |
            |
     =========
-    """   # 6 vidas
+    """
 ]
 
 def escolher_palavra():
@@ -94,7 +92,7 @@ def escolher_palavra():
     while True:
         tema_escolhido = input("Escolha um tema: ").lower()
         if tema_escolhido in temas:
-            # Retorna a palavra e o tema escolhido para mostrar na tela
+            
             return random.choice(temas[tema_escolhido]), tema_escolhido
         print("Tema inválido. Tente novamente.")
 
@@ -104,9 +102,9 @@ def mostrar_palavra(palavra, letras_acertadas):
     return " ".join(resultado)
 
 def jogar():
-    # Desempacota a palavra e o tema
+    
     palavra_secreta, tema = escolher_palavra() 
-    letras_acertadas = set() # Usar set deixa a busca mais rápida
+    letras_acertadas = set()
     letras_tentadas = []
     vidas = 6
     pontos = 0
@@ -118,7 +116,7 @@ def jogar():
     print()
 
     while vidas > 0:
-        print(FORCA_ART[vidas]) # Mostra o desenho da forca
+        print(FORCA_ART[vidas])
         print("Palavra:", mostrar_palavra(palavra_secreta, letras_acertadas))
         print("Letras já tentadas:", ", ".join(letras_tentadas))
         print(f"Vidas: {vidas} | Pontos: {pontos}")
@@ -143,11 +141,11 @@ def jogar():
         else:
             print("Ops! Essa letra não está na palavra.")
             vidas -= 1
-            pontos = max(0, pontos - 2) # Evita pontos negativos
+            pontos = max(0, pontos - 2)
 
         print()
 
-        # 2. Verificação de vitória otimizada com set
+       
         if set(palavra_secreta).issubset(letras_acertadas):
             print("=" * 40)
             print("PARABÉNS! VOCÊ VENCEU!")
@@ -164,5 +162,4 @@ def jogar():
         print("Pontuação final:", pontos)
         print("=" * 40)
 
-# Início do programa
 jogar()
