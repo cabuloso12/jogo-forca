@@ -70,4 +70,4 @@ O dicionário de palavras do jogo está configurado com as seguintes categorias:
 
 ## 🧑‍💻 Autor Davi R.
 
-Desenvolvido por [Seu Nome](https://github.com).
+Desenvolvido por cabuloso12 (https://github.com).
